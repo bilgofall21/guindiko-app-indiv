@@ -1,0 +1,1 @@
+# guindiko-app-indiv
