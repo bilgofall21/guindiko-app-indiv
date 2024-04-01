@@ -1,0 +1,75 @@
+
+
+/* titre listes */
+.pagecontainer{
+  margin-top: 120px;
+}
+
+
+hr{
+  border-color: #E68513 !important;
+  width: 60px;
+  height: 2px !important;
+  margin: 0 auto;
+  /* margin-left: 20px; */
+
+}
+.listesMentors .list-group  .active{
+  background-color: #00225A !important;
+}
+.listesMentors .border-start{
+  /* border-color:  #00225A  !important;
+  border-width: 4px; */
+}
+.listesMentors #theme{
+  margin-top: 120px;
+  border: 2px solid #00225A  ;
+}
+
+/* carte mentor */
+.itemName{
+  height: 30px;
+  width: 50%;
+  background-color: #E68513;
+  border-radius: 20px;
+}
+#cardmentor {
+  box-shadow: 2px 2px 5px  #00225A ;
+}
+#cardmentor img {
+  height: 14rem;
+}
+
+/* style article */
+/* section articles */
+.cardtop{
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+.cardtop .itm1{
+  height: 10rem;
+}
+.cardtop .itm2 h4{
+font-size: 15px;
+font-weight: bold;
+}
+.cardtop .itm2 P{
+font-size: 15px;
+
+}
+#cartearticle{
+  border-top-left-radius: 8%;
+  border-bottom-right-radius: 8%;
+  width: 40%;
+  border: 2px solid #E68513 ;
+}
+#cartearticle img{
+  width: 100%;
+  height: 10rem;
+  border-radius: 20px;
+}
+#textarticle{
+  max-height: 60px;
+  overflow: hidden;
+}
+

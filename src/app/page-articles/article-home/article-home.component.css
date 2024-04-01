@@ -1,0 +1,94 @@
+
+
+/* baniere css */
+.banierearticles{
+  background-image: url(https://www.fasonumerique.com/public/img/a35bfa62eef7369cf99f300c277387d01489ad27.jpg);
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+.banierearticles img{
+  height: 60vh;
+}
+.textbaniere{
+  width: 30%;
+  position: absolute;
+  bottom: 4px;
+  left: 80px;
+
+}
+.textbaniere h4, .mentorcontainer h4{
+color:#E68513;
+}
+.textbaniere p{
+font-size: 18px;
+}
+
+/*** Whats New Start ***/
+.populer-news .whats-carousel.owl-carousel {
+  position: relative;
+}
+
+
+
+
+.populer-news .whats-carousel.owl-carousel .owl-nav .owl-prev:hover,
+.populer-news .whats-carousel.owl-carousel .owl-nav .owl-next:hover {
+  background: var(--bs-primary);
+  color: var(--bs-white);
+  border-radius: 10px;
+}
+
+.populer-news .tab-class .nav-item a.active {
+  background: #00225A !important;
+  color: white;
+
+}
+.populer-news .tab-class .nav-item a {
+  text-decoration: none;
+  color: black;
+
+}
+
+/* section new article */
+#dernierarticle{
+  /* box-shadow: 2px 8px 1px #E68513 ; */
+}
+#dernierarticle img{
+height: 10rem;
+}
+#dernierarticle a{
+  font-size: 15px;
+  font-weight: bold;
+  color: #E68513;
+}
+#auteurnew a{
+  font-size: 12px;
+  text-decoration: none;
+  color: #00225A;
+}
+#tagarticle{
+background-color : #E68513;
+}
+.allPublication h3, .dernierPublication h3{
+  color: #E68513;
+
+}
+#rightblock{
+  background-color :#00225A;
+}
+
+#mignaturearticle a{
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+}
+#mignaturearticle h6{
+color :#00225A;
+font-weight: 600;
+font-size: 14px;
+}
+#mignaturearticle a{
+color: #E68513;
+}

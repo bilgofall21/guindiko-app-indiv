@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="dashboard.component.css">
+
+	<title>AdminHub</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+    <div class="brand mt-1" id="brand">
+        <span class="text text-white"><img src="assets/dashboard/logofooter.png" alt=""></span>
+        <div class="ms-3">
+          <p class="mt-3" style="font-size: 16px;">Gorgui Amadem FALL</p>
+          <p style="font-size: 14px;">en ligne</p>
+
+        </div>
+    </div>
+		<ul class="side-menu top">
+			<li class="active">
+				<a >
+					<i class='bx bxs-dashboard' [routerLink]="['/dashboard']"></i>
+					<span class="text" [routerLink]="['/dashboard']">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a>
+          
+					<i class='bx bxs-shopping-bag-alt' [routerLink]="['/gestion-contenu']"></i>
+					<span class="text" [routerLink]="['/gestion-contenu']">Gestion contenu</span>
+				</a>
+			</li>
+			<li>
+				<a >
+					<i class='bx bxs-doughnut-chart' [routerLink]="['/gestion-user']"></i>
+					<span class="text" [routerLink]="['/gestion-user']">Gestion utilisateurs</span>
+				</a>
+			</li>
+			<li>
+				<a >
+		      <i class='bx bxs-message-dots' [routerLink]="['/gestion-profil']"></i>
+					<span class="text" [routerLink]="['/gestion-profil']">Gestion profil</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu mt-4">
+			
+			<li>
+				<a class="logout"  (click)="logout ()">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Deconnexionnn</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<form action="#">
+				<div class="form-input mt-3">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' style="color: #00225A;"></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+      <div class="content-wrapper">
+        
+        <div class="carte mt-3">
+          <div class="carte-items d-flex py-3 px-5 rounded">
+            <div class="iconeOffre">
+              <i class="fa-solid fa-user-tie" style="color: #E68513; font-size: 50px;"></i>
+            </div>
+          <div class="ml-5">
+            <p style="font-size: 30px; font-weight: bold;">Mentors</p>
+            <p class="mt-3" style="font-size: 35px;">0</p>
+          </div>
+          </div>
+          <div class="carte-items d-flex py-3 px-5 rounded">
+            <i class="fa-solid fa-user" style="color: #E68513; font-size: 50px;"></i>
+          <div class="ml-5">
+            <p style="font-size: 30px; font-weight: bold;">Mentorés</p>
+            <p class="mt-3" style="font-size: 35px;">0</p>
+          </div>
+          </div>
+          <div class="carte-items d-flex py-3 px-5 rounded" >
+            <div class="iconeOffre">
+              <i class="fa-regular fa-newspaper" style="color: #E68513; font-size: 50px;"></i>
+            </div>
+          <div class="ml-5">
+            <p style="font-size: 30px; font-weight: bold;">Articles</p>
+            <p class="mt-3" style="font-size: 35px;" *ngIf="listeDomaines">{{ listeDomaines.length }}></p>
+          </div>
+          </div>
+        </div>
+        
+        <div class="">
+          <div class="d-flex flex-wrap justify-content-between">
+            <h5 class="card-title allUser text-white py-2 px-2 mt-4">Utilisateurs récents</h5>
+          </div>
+        <div class="row my-5 tab">
+          <div class="col-lg-12 d-flex grid-margin stretch-card tabItem">
+            <div class="card tabCard w-100">
+              <div class="card-body tardTab">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead >
+                      <tr class="trHead">
+                        <td class="">Nom</td>
+                        <td class="">Prénom</td>
+                        <td class="">Numéro</td>
+                        <td class="">Username</td>
+                        <td class="">Rôle</td>
+                        <td class="">Action</td>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr class="tableBody mt-5">
+                        <td>
+                          <div>FALL</div>
+                        </td>
+                        <td>
+                          <div>Amadem</div>
+                        </td>
+                        <td>
+                          <div>77 777 77 77</div>
+                        </td>
+                        <td>
+                          <div>sasuke</div>
+                        </td>
+                        <td>
+                          <div>Mentor</div>
+                        </td>
+                        <td>
+                          <div>
+                            <i class="fa-solid fa-eye me-3" style="color: #E68513;" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                            <i class="fa-solid fa-pen me-3" style="color: #E68513;"></i>
+                            <i class="fa-solid fa-ban me-3" style="color: #E68513;"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="tableBody mt-5">
+                        <td>
+                          <div>DIATTA</div>
+                        </td>
+                        <td>
+                          <div>Véronique</div>
+                        </td>
+                        <td>
+                          <div>77 777 77 78</div>
+                        </td>
+                        <td>
+                          <div>nikagege</div>
+                        </td>
+                        <td>
+                          <div>Mentor</div>
+                        </td>
+                        <td>
+                          <div>
+                            <i class="fa-solid fa-eye me-3" style="color: #E68513;" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                            <i class="fa-solid fa-pen me-3" style="color: #E68513;"></i>
+                            <i class="fa-solid fa-ban me-3" style="color: #E68513;"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="tableBody mt-5">
+                        <td>
+                          <div>DIOUF</div>
+                        </td>
+                        <td>
+                          <div>Astou</div>
+                        </td>
+                        <td>
+                          <div>77 777 77 79</div>
+                        </td>
+                        <td>
+                          <div>ayoudiouf</div>
+                        </td>
+                        <td>
+                          <div>Mentoré</div>
+                        </td>
+                        <td>
+                          <div>
+                            <i class="fa-solid fa-eye me-3" style="color: #E68513;" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                            <i class="fa-solid fa-pen me-3" style="color: #E68513;"></i>
+                            <i class="fa-solid fa-ban me-3" style="color: #E68513;"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="tableBody mt-5">
+                        <td>
+                          <div>DIOUF</div>
+                        </td>
+                        <td>
+                          <div>Astou</div>
+                        </td>
+                        <td>
+                          <div>77 777 77 79</div>
+                        </td>
+                        <td>
+                          <div>ayoudiouf</div>
+                        </td>
+                        <td>
+                          <div>Mentoré</div>
+                        </td>
+                        <td>
+                          <div>
+                            <i class="fa-solid fa-eye me-3" style="color: #E68513;" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                            <i class="fa-solid fa-pen me-3" style="color: #E68513;"></i>
+                            <i class="fa-solid fa-ban me-3" style="color: #E68513;"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="tableBody mt-5">
+                        <td>
+                          <div>DIOUF</div>
+                        </td>
+                        <td>
+                          <div>Astou</div>
+                        </td>
+                        <td>
+                          <div>77 777 77 79</div>
+                        </td>
+                        <td>
+                          <div>ayoudiouf</div>
+                        </td>
+                        <td>
+                          <div>Mentoré</div>
+                        </td>
+                        <td>
+                          <div>
+                            <i class="fa-solid fa-eye me-3" style="color: #E68513;" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                            <i class="fa-solid fa-pen me-3" style="color: #E68513;"></i>
+                            <i class="fa-solid fa-ban me-3" style="color: #E68513;"></i>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+	<script src="script.js"></script>
+</body>
+</html>
+
+<!-- Popup pour afficher détail -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Détail de l'utilisateur</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex justify-content-between">
+        <div>
+          <div class="">
+            <span>Nom : </span><span>FALL</span>
+          </div>
+          <div class="mt-3">
+            <span>Prénom : </span><span>Amadem</span>
+          </div>
+          <div class="mt-3">
+            <span>Téléphone : </span><span>77 777 77 77 </span>
+          </div>
+          <div class="mt-3">
+            <span>username : </span><span>sasuke</span>
+          </div>
+          <div class="mt-3">
+            <span>Rôle : </span><span>Mentor</span>
+          </div>
+          <div class="mt-3">
+            <span>Membre depuis : </span><span>08/12/2023</span>
+          </div>
+        </div>
+        <div class="imgPopup">
+          <img src="https://img.freepik.com/photos-gratuite/portrait-beau-male-barbu_23-2148563532.jpg?size=626&ext=jpg&ga=GA1.1.12207566.1692912950&semt=ais" alt="">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <h1 class="text-center text-footer justify-content-center" style="color: #E68513;">GUINDIKO</h1>
+      </div>
+    </div>
+  </div>
+</div>

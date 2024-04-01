@@ -1,0 +1,196 @@
+<app-header></app-header>
+<div class="pagecontainer">
+<div class="profilcontainer mt-5">
+  <section class="enteteProfil mt-5">
+    <div class="container">
+      <div class="row w-75" appBgColorOrangeguindiko>
+        <div class="col-8">
+          <div class="spetch">
+            <div>
+              <h4>Salut je suis</h4>
+            </div>
+            <div>
+              <h6 class="text-white fw-bold">
+                Prenom nom
+              </h6>
+            </div>
+            <div>
+              <h5 class="text-white fw-bold">Titre Professionnel</h5>
+            </div>
+            <div class="text-white fw-light lead card-text">
+              <p>description Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam adipisci iusto veniam tempore nostrum, amet sit vel architecto. At, architecto molestiae. Earum minus at ab sit corporis accusantium sequi libero!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="imagconain">
+            <img class="img-fluid" src="https://img.freepik.com/photos-gratuite/vue-face-homme-faisant-presentation-lors-reunion_23-2148817046.jpg?size=626&ext=jpg&ga=GA1.1.2145246215.1689776414&semt=ais" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="joinmentor d-flex justify-content-center mt-3 ">
+    <button class="btn button  col-4">Joindre Mentor</button>
+  </div>
+  <section class="profilcarte">
+    <!-- <div class="container"> -->
+      <div class="row">
+        <div class=" col-3 itemExperinece">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <div class="cardtop d-flex justify-content-between">
+                <div>
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+                <div>
+                  <h5>Developpeur web senior</h5>
+                </div>
+              </div>
+              <div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class=" col-3 itemExperinece">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <div class="cardtop d-flex justify-content-between">
+                <div>
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+                <div>
+                  <h5>Developpeur web senior</h5>
+                </div>
+              </div>
+              <div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class=" col-3 itemExperinece">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <div class="cardtop d-flex justify-content-between">
+                <div>
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+                <div>
+                  <h5>Developpeur web senior</h5>
+                </div>
+              </div>
+              <div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class=" col-3 itemExperinece">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <div class="cardtop d-flex justify-content-between">
+                <div>
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+                <div>
+                  <h5>Developpeur web senior</h5>
+                </div>
+              </div>
+              <div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    <!-- </div> -->
+  </section>
+
+  <section class="middlemain2">
+    <div class="sectiontitle text-center  mt-1">
+      <h5 class="text-black fw-bold">Realisations</h5>
+      <hr class="border-2 opacity-100">
+    </div>
+    <section style="background-color: white;">
+        <div class="container py-5">
+          <div class="main-timeline">
+            <div class="timeline left">
+              <div class="card">
+                <div class="card-body p-4">
+                  <h3 class="card-title text-center">18 mars 2022 / 08 Avril 2022</h3>
+                  <h5 class="card-title text-center">Certification Developpeur Google Analytics</h5>
+                  <p class="mb-0 card-text lead">
+                    La certification porte sur divers aspects de Google Analytics, tels que la configuration du compte, la mise en œuvre du suivi, l'analyse des rapports, la compréhension des données, et la configuration des objectifs.</p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline right">
+              <div class="card">
+                <div class="card-body p-4">
+                  <h3 class="card-title text-center">18 mars 2022 / 08 Avril 2022</h3>
+                  <h5 class="card-title text-center">Certification Developpeur Google Analytics</h5>
+                  <p class="mb-0 card-text lead">
+                    La certification porte sur divers aspects de Google Analytics, tels que la configuration du compte, la mise en œuvre du suivi, l'analyse des rapports, la compréhension des données, et la configuration des objectifs.</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+</section>
+<section class="thisArticles">
+
+  <div class="container">
+    <div class="section title mt-5 mb-4">
+      <h5 class="text-black text-center fw-bold">Publications</h5>
+      <hr class="border-2 opacity-100">
+    </div>
+    <div class="row mb-4 ">
+      <div class="col-6" *ngFor="let element of articles">
+        <div class="card p-3 w-100" id="cartearticle">
+          <div class="cardtop">
+            <div class="itm1 shadow-sm ">
+              <img class="img-fluid" [src]="element.imageArticle" alt="">
+            </div>
+            <div class="itm2 ms-3 mt-1">
+              <div class="card-title">
+                <h4>{{element.titreArticle}} </h4>
+              </div>
+              <h6>
+                <span style="color:#E68513 ;" class="fw-bold">domaine</span> : {{element.Domaine}}
+              </h6>
+              <p><i class="fa-solid fa-user me-2" style="color:#E68513 ;"></i> {{element.auteurArticle}}</p>
+              <p><i class="fa-solid fa-calendar-days me-2" style="color:#E68513 ;"></i> {{element.dateArticle}}</p>
+            </div>
+          </div>
+          <div class="card-text mt-1" id="textarticle">
+            <p>{{element.description}}</p>
+          </div>
+          <div class="text-end">
+            <button class="btn text-white " appBgColorBlueguindiko><i class="fa-regular fa-hand-point-right"></i> Voir detail</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+<app-footer></app-footer>

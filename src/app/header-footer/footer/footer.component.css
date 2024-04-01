@@ -1,0 +1,13 @@
+#logofooter img{
+  height: 60px;
+  }
+  #iconecocialfooter i {
+    /* height: 18px;
+    width: 18px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #footernavigate a:hover  {
+    color: #E68513 !important;
+  }

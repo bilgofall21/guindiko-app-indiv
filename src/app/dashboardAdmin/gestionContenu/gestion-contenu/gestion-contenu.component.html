@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="gestion-contenu.component.css">
+
+	<title>AdminHub</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+    <div class="brand mt-1" id="brand">
+        <span class="text text-white"><img src="assets/dashboard/logofooter.png" alt=""></span>
+        <div class="ms-3">
+          <p class="mt-3" style="font-size: 16px;">Gorgui Amadem FALL</p>
+          <p style="font-size: 14px;">en ligne</p>
+
+        </div>
+    </div>
+		<ul class="side-menu top">
+			<li class="active">
+				<a>
+					<i class='bx bxs-dashboard' style="cursor: pointer;" [routerLink]="['/dashboard']"></i>
+					<span class="text"[routerLink]="['/dashboard']">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a >
+					<i class='bx bxs-shopping-bag-alt' [routerLink]="['/gestion-conteu']"></i>
+					<span class="text"[routerLink]="['/gestion-contenu']">Gestion contenu</span>
+				</a>
+			</li>
+			<li>
+				<a>
+					<i class='bx bxs-doughnut-chart' [routerLink]="['/gestion-user']"></i>
+					<span class="text"[routerLink]="['/gestion-user']">Gestion utilisateurs</span>
+				</a>
+			</li>
+			<li>
+				<a>
+					<i class='bx bxs-message-dots' [routerLink]="['/gestion-profil']"></i>
+					<span class="text"[routerLink]="['/gestion-profil']">Gestion profil</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu mt-4">
+
+			<li>
+				<a class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Deconnexion</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<form action="#">
+				<div class="form-input mt-3">
+					<input type="search" placeholder="Search..." [(ngModel)]="filterValue" (keyup)="onSearch()">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a class="notification">
+				<i class='bx bxs-bell' style="color: #00225A;"></i>
+				<span class="num">8</span>
+			</a>
+			<a class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+      <button type="button" class="btn btnAdd" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Ajouter un service
+      </button>
+      <div class="content-wrapper">
+        <div class="">
+          <h2 class="card-title text-center">Contenu de la plateforme</h2>
+          <div class="row mt-5 d-flex justify-content-center cardContenu">
+            <div class="col-sm-12 col-md-6 col-lg-4 mt-5" *ngFor="let domaine of getArticlesPage()">
+              <div class="card imgCard" style="width: 18rem;">
+                <img src="https://img.freepik.com/photos-gratuite/concept-controle-qualite-standard-m_23-2150041859.jpg?size=626&ext=jpg&ga=GA1.1.12207566.1692912950&semt=sph" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{domaine.nomDomaine}}</h5>
+                  <p class="card-text">{{domaine.description  }}</p>
+                  <a class="">
+                    <i class="fa-solid fa-eye me-4" style="color: #E68513;" [routerLink]="['/detailarticle', domaine.id]" ></i>
+                    <i class="fa-solid fa-pen me-4" style="color: #E68513;" data-bs-toggle="modal" data-bs-target="#modifierModal" (click)="chargerElemnt(domaine)"></i>
+                    <i class="fa-solid fa-trash-can me-4" style="color: #E68513;" (click)="supprimerDomaine(domaine.id)"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+             <!-- pour la pagination -->
+    <div class="d-flex flex-wrap justify-content-center my-5">
+      <button class="btn btnColor me-2" [disabled]="pageActuelle === 1" (click)="pageActuelle = pageActuelle - 1">
+        Précédent
+      </button>
+      <button class="btn btnColor ms-2" *ngFor="let page of pages" (click)="pageActuelle = page">
+        {{ page }}
+      </button>
+      <button class="btn btnColor ms-2" [disabled]="pageActuelle === totalPages" (click)="pageActuelle = pageActuelle + 1">
+        Suivant
+      </button>
+  </div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+
+	<script src="script.js"></script>
+</body>
+</html>
+
+<!-- Popup pour ajouter un service -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter un service</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="" >
+          <!-- <div class="mb-3">
+            <Label class = "form-label"> Sélectionnez la photo 
+            <input id = "uploader" name = "image" type = "file" classe multiple = "file-chargement" (change)="getFile($event)" >
+           </Label>
+           </div> -->
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Titre</label>
+            <input type="text" class="form-control" name="nomDomaine" id="exampleFormControlInput1" placeholder="" [(ngModel)]="image">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Titre</label>
+            <input type="text" class="form-control" name="nomDomaine" id="exampleFormControlInput1" placeholder="" [(ngModel)]="nomDomaine">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Contenu</label>
+            <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="description"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  (click)="ajoutDomaine()">Ajouter</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Popup pour modifier un service -->
+<div class="modal fade" id="modifierModal" tabindex="-1" aria-labelledby="modifierModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modifierModalLabel">Modifier un service</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" >
+        <div class="mb-3">
+          <label for="modifierFormControlInput1" class="form-label">Titre</label>
+          <input type="text" class="form-control" name="nomDomaine"id="modifierFormControlInput1" placeholder=""[(ngModel)]="image">
+        </div>
+        <div class="mb-3">
+          <label for="modifierFormControlInput1" class="form-label">Titre</label>
+          <input type="text" class="form-control" name="nomDomaine"id="modifierFormControlInput1" placeholder=""[(ngModel)]="nomDomaine">
+        </div>
+        <div class="mb-3">
+          <label for="modifierFormControlTextarea1" class="form-label">Contenu</label>
+          <textarea class="form-control" name="description" id="modifierFormControlTextarea1" rows="3" [(ngModel)]="description"></textarea >
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateDomaine()">Modifier</button>
+      </div>
+    </div>
+  </div>
+</div>

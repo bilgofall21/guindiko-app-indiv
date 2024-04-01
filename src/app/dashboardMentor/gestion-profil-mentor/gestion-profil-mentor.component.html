@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="gestion-profil-mentor.component.css">
+
+	<title>AdminHub</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+    <div class="brand mt-1" id="brand">
+        <span class="text text-white"><img src="assets/dashboard/logofooter.png" alt=""></span>
+        <div class="ms-3">
+			<p class="mt-3" style="font-size: 16px;">Véro M G D</p>
+			<p style="font-size: 14px;">en ligne</p>
+		  </div>
+    </div>
+		<ul class="side-menu top">
+			<li class="active">
+				<a >
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text" [routerLink]="['/dashboard']">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a>
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text" [routerLink]="['/gestion-contenu']">Gestion contenu</span>
+				</a>
+			</li>
+			<li>
+				<a >
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text" [routerLink]="['/gestion-user']">Gestion utilisateurs</span>
+				</a>
+			</li>
+			<li>
+				<a >
+		      <i class='bx bxs-message-dots' ></i>
+					<span class="text" [routerLink]="['/gestion-profil-mentor']">Gestion profil</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu mt-4">
+
+			<li>
+				<a class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Deconnexion</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<form action="#">
+				<div class="form-input mt-3">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' style="color: #00225A;"></i>
+				<span class="num">8</span>
+			</a>
+			<a [routerLink]="['/message']" class="profile">
+				<!-- <img src="img/people.png"> -->
+        <i class="fa-solid fa-envelope" style="color: #00225A;"></i>
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+      <h3 class="text-center mb-5">Informations du profil</h3>
+      <div class="first"></div>
+      <div class="second"></div>
+      <div class="row g-4">
+        <div class="col col-md-6 left-profil">
+          <img class="container-fluid" src="https://img.freepik.com/photos-gratuite/femme-africaine-dans-studio-mur-blanc-femme-chemise-blanche_1157-47613.jpg?size=626&ext=jpg&ga=GA1.1.12207566.1692912950&semt=ais" alt="">
+        </div>
+        <div class="col-md-6 right-profil">
+          <div class="mb-3 d-flex flex-wrap justify-content-between">
+            <label for="exampleFormControlInput1" class="form-label">Nom : </label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="FALL">
+          </div>
+          <div class="mb-3 d-flex flex-wrap justify-content-between">
+            <label for="exampleFormControlInput1" class="form-label">Prénom : </label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Amadem">
+          </div>
+          <div class="mb-3 d-flex flex-wrap justify-content-between">
+            <label for="exampleFormControlInput1" class="form-label">Adresse email : </label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="papaamadem@gmail.com">
+          </div>
+          <div class="mb-3 d-flex flex-wrap justify-content-between">
+            <label for="exampleFormControlInput1" class="form-label">Téléphone : </label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="77 777 77 77">
+          </div>
+          <div class="mb-3 d-flex flex-wrap justify-content-between">
+            <label for="exampleFormControlInput1" class="form-label">Username : </label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="sasuke">
+          </div>
+        </div>
+      </div>
+      <h3 class="text-center mb-5">Changer de mot de passe</h3>
+      <div class="first"></div>
+      <div class="second"></div>
+      <div class="container pwd">
+        <form action="">
+          <div class="mb-3 d-flex flex-wrap justify-content-between">
+            <label for="exampleFormControlInput1" class="form-label">Ancien mot de passe :</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+          <div class="mb-3 d-flex flex-wrap justify-content-between">
+            <label for="exampleFormControlInput1" class="form-label">Nouveau mot de passe :</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+          <div class="mb-3 d-flex flex-wrap justify-content-between">
+            <label for="exampleFormControlInput1" class="form-label">Confirmer mot de passe :</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+        </form>
+      </div>
+      <button class="btnSave p-2 mt-5">Enregistrer</button>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+
+	<script src="script.js"></script>
+</body>
+</html>

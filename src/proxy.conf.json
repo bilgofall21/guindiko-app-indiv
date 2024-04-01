@@ -1,0 +1,9 @@
+{
+    "/api/*": {
+    "target": "https://guindiko2.mouhamadoufaye.tech/api",
+    "secure": false,
+    "logLevel": "debug",
+        "changeOrigin": true
+    }
+    }
+

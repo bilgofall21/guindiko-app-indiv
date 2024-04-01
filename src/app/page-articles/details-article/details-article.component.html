@@ -1,0 +1,89 @@
+<app-header></app-header>
+
+ <!-- baniere page article -->
+ <section class="banierearticles">
+  <div class="banierehome img-fluid" >
+    <div class="container-fluid page-header-inner">
+    </div>
+</div>
+</section>
+
+<section class="detailarticle">
+  <!-- Single Product Start -->
+  <div class="container-fluid py-5" >
+    <div class="container">
+    <div class="container py-5" id="detailcontainer">
+        <ol class="breadcrumb justify-content-start mb-4">
+            <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+            <li class="breadcrumb-item"><a href="#">Article</a></li>
+            <li class="breadcrumb-item active text-dark">Detail article</li>
+        </ol>
+
+        <div class="row">
+            <div class="col-lg-11" *ngFor="let element of detailArticles " id="detail">
+                <div class="mb-4">
+                    <a href="#" class="h1 display-5 text-decoration-none"> {{element.titreArticle}} </a>
+                </div>
+                <div class="position-relative rounded overflow-hidden mb-3 bg-danger">
+                    <img [src]="element.imageArticle" class="img-zoomin img-fluid rounded w-100 border" alt="">
+                    <div class="position-absolute text-white fw-bold px-4 py-2  rounded" style="top: 20px; right: 20px;" appBgColorBlueguindiko>
+                      {{element.Domaine}}
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <a href="#" class="text-dark link-hover me-3"><i class="fa fa-clock" style="color:#E68513 ;" text-decoration-none></i>{{element.dateArticle}} </a>
+                    <a href="#" class="text-dark link-hover me-3"><i class="fa fa-eye" style="color:#E68513 ;" text-decoration-none></i> 20 vues</a>
+                    <a href="#" class="text-dark link-hover me-3"><i class="fa fa-comment-dots" style="color:#E68513 ;" text-decoration-none></i> 05 Comment</a>
+                    <a href="#" class="text-dark link-hover text-decoration-none"><i class="fa-solid fa-user me-2" style="color:#E68513 ;"></i> {{element.auteurArticle}} </a>
+                </div>
+                <p class="my-4 lead"> {{element. contenueArticle }} </p>
+                <!-- SECTION COMMENTAIRE Debut -->
+                  <!-- listes commentaire debut -->
+                <div class="bg-light rounded p-4" >
+                    <h4 class="mb-4" >Commentaires</h4>
+                    <div class="p-4 bg-white rounded mb-4">
+                        <div class="row g-4 rounded" appBgColorBlueguindiko id="commentairecontainer">
+                            <div class="col-3">
+                                <img src="https://img.freepik.com/photos-gratuite/jeune-belle-femme-pull-chaud-rose-aspect-naturel-souriant-portrait-isole-cheveux-longs_285396-896.jpg?size=626&ext=jpg&ga=GA1.1.2145246215.1689776414&semt=sph" class="img-fluid rounded-circle w-100" alt="">
+                            </div>
+                            <div class="col-9">
+                                <div class="d-flex justify-content-between">
+                                    <h5 cl >James Boreego</h5>
+                                    <a href="#" class="link-hover text-body fs-6"><i class="fas fa-long-arrow-alt-right me-1"></i> Reply</a>
+                                </div>
+                                <small class=" d-block mb-3 text-white"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                <p class="mb-0 text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                   <!-- listes commentaire fin -->
+
+                   <!-- faire un commentaire fin -->
+                <div class=" rounded p-4 my-4" appBgColorBlueguindiko >
+                    <h4 class="mb-4 text-white fw-bold">Laisser un commntaire</h4>
+                    <form action="#">
+                        <div class="row g-4">
+                            <div class="col-10">
+                                <textarea class="form-control" name="textarea" id="" cols="30" rows="7" placeholder="Write Your Comment Here"></textarea>
+                            </div>
+                            <div class="col-4">
+                                <button class="form-control btn bg-white fw-bold py-3" type="button" >Publier le commentaire</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                   <!-- faire un commentaire fin-->
+                 <!-- SECTION COMMENTAIRE Fin -->
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- Single Product End -->
+</section>
+
+
+<app-footer></app-footer>

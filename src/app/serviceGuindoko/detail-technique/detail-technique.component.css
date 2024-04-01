@@ -1,0 +1,144 @@
+#domaines{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5vh;
+  margin:10vh  0   10vh 0;
+}
+.card {
+  /* background-color: #ffffff;
+  padding: 20px 0;
+  border-radius: 5px; */
+  height: 95vh;
+  box-shadow: 0px 0px 8px #E68513;
+}
+#retour{
+  color: #E68513;
+
+}
+.soulignement{
+  background-color: #00225A;
+  height: 5px;
+  width: 20%;
+  margin: 0 auto;
+  /* position: absolute; */
+}
+.pointSoulignement{
+  border-radius: 50%;
+  background-color: #E68513;
+  height: 25px;
+  width: 25px;
+  align-items: center;
+  justify-content: center;
+  margin-top: -15px !important;
+  margin: 0 auto;
+  /* position: relative; */
+}
+.card img {
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+}
+/* #detail{
+  width: 50%;
+} */
+.custom-container {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#titreDetails{
+  background-color: #E68513;
+  color: #ffffff;
+  width: 75%;
+
+}
+#boutton{
+  color: #ffffff;
+  background-color: #00225A;
+}
+.card-body {
+  margin-top: 30vh;
+}
+#placeDetail{
+  margin-top: -35vh;
+}
+/* .card-body p{
+  /* margin-bottom: 5vh; *
+  height: 30vh;
+} */
+.card-text p{
+  /* margin-bottom: 5vh; */
+  height: 30vh;
+}
+h1{
+/* align-items: center;
+justify-content: center; */
+text-align: center;
+}
+/* Media Queries pour la responsivité */
+/* Media Queries pour la responsivité */
+@media screen and (max-width: 1168px) {
+  #domaines {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    height: 95vh;
+  }
+
+  .card-body {
+    margin-top: 30vh;
+  }
+
+  #placeDetail {
+    margin-top: -35vh;
+  }
+
+  .card-text p {
+    height: 30vh;
+  }
+}
+/* Media Queries pour la responsivité */
+@media screen and (max-width: 768px) {
+  #domaines {
+    grid-template-columns: 1fr 1fr ;
+  }
+
+  .card {
+    height: 125vh;
+  }
+
+  .card-body {
+    margin-top: 30vh;
+  }
+
+  #placeDetail {
+    margin-top: -45vh;
+  }
+
+  .card-text p {
+    height: 60vh;
+  }
+}
+
+  @media screen and (max-width: 508px) {
+    #domaines {
+      grid-template-columns: 1fr ;
+    }
+
+    .card {
+      height: 95vh;
+    }
+
+    .card-body {
+      margin-top: 30vh;
+    }
+
+    #placeDetail {
+      margin-top: -35vh;
+    }
+
+    .card-text p {
+      height: 30vh;
+    }
+  }

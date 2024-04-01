@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="message.component.css">
+
+	<title>AdminHub</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+    <div class="brand mt-1" id="brand">
+        <span class="text text-white"><img src="assets/dashboard/logofooter.png" alt=""></span>
+        <div class="ms-3">
+          <p class="mt-3" style="font-size: 16px;">Dino DIOUF</p>
+          <p style="font-size: 14px;">en ligne</p>
+
+        </div>
+    </div>
+		<ul class="side-menu top">
+			<li class="active">
+				<a>
+				    <i class='bx bxs-shopping-bag-alt' [routerLink]="['/gestion-demande-mentore']"></i>
+				    <span class="text" [routerLink]="['/gestion-demande-mentore']">Gestion demande</span>
+				</a>
+			</li>
+			<li>
+				<a >
+		      <i class='bx bxs-message-dots' [routerLink]="['/gestion-profil-mentore']"></i>
+					<span class="text" [routerLink]="['/gestion-profil-mentore']">Gestion profil</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu mt-4">
+
+			<li>
+				<a class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Deconnexion</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<form action="#">
+				<div class="form-input mt-3">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' style="color: #00225A;"></i>
+				<span class="num">8</span>
+			</a>
+			<a [routerLink]="['/message']" class="profile">
+				<!-- <img src="img/people.png"> -->
+        <i class="fa-solid fa-envelope" style="color: #00225A;"></i>
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+    <!-- Section -->
+    <div class="container">
+
+      <section style="background-color: #eee;">
+        <div class="container py-5">
+
+            <div class="row">
+
+                <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+
+                    <h5 class="font-weight-bold mb-3 text-center text-lg-start">Member</h5>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- @foreach ($users as $user) -->
+                            <ul class="list-unstyled mb-0">
+                                <li class="p-2 border-bottom" style="background-color: #eee;">
+                                    <a href="" class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row">
+                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp" alt="avatar" class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
+                                            <div class="pt-1">
+                                                <!-- <p class="fw-bold mb-0">{{$user->email}}</p> -->
+                                            </div>
+                                        </div>
+                                        <div class="pt-1">
+                                            <p class="small text-muted mb-1">Just now</p>
+                                            <span class="badge bg-danger float-end">1</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- @endforeach -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-7 col-xl-8">
+
+                    <ul class="list-unstyled">
+                        <li class="d-flex justify-content-between mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar" class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between p-3">
+                                    <p class="fw-bold mb-0">Brad Pitt</p>
+                                    <p class="text-muted small mb-0"><i class="far fa-clock"></i> 12 mins ago</p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="mb-0">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labore et dolore magna aliqua.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex justify-content-between mb-4">
+                            <div class="card w-100">
+                                <div class="card-header d-flex justify-content-between p-3">
+                                    <p class="fw-bold mb-0">Lara Croft</p>
+                                    <p class="text-muted small mb-0"><i class="far fa-clock"></i> 13 mins ago</p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="mb-0">
+                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                        laudantium.
+                                    </p>
+                                </div>
+                            </div>
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp" alt="avatar" class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
+                        </li>
+                        <li class="d-flex justify-content-between mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar" class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between p-3">
+                                    <p class="fw-bold mb-0">Brad Pitt</p>
+                                    <p class="text-muted small mb-0"><i class="far fa-clock"></i> 10 mins ago</p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="mb-0">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labore et dolore magna aliqua.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bg-white mb-3">
+                            <div class="form-outline">
+                                <textarea class="form-control" id="textAreaExample2" rows="4"></textarea>
+                                <label class="form-label" for="textAreaExample2">Message</label>
+                            </div>
+                        </li>
+                        <button type="button" class="btn btn-info btn-rounded float-end">Send</button>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Section -->
+	</section>
+	<!-- CONTENT -->
+
+	<script src="script.js"></script>
+</body>
+</html>
+
+<!-- Popup pour afficher détail -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Détail de l'utilisateur</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex justify-content-between">
+        <div>
+          <div class="">
+            <span>Nom : </span><span>FALL</span>
+          </div>
+          <div class="mt-3">
+            <span>Prénom : </span><span>Amadem</span>
+          </div>
+          <div class="mt-3">
+            <span>Téléphone : </span><span>77 777 77 77 </span>
+          </div>
+          <div class="mt-3">
+            <span>username : </span><span>sasuke</span>
+          </div>
+          <div class="mt-3">
+            <span>Rôle : </span><span>Mentor</span>
+          </div>
+          <div class="mt-3">
+            <span>Membre depuis : </span><span>08/12/2023</span>
+          </div>
+        </div>
+        <div class="imgPopup">
+          <img src="https://img.freepik.com/photos-gratuite/portrait-beau-male-barbu_23-2148563532.jpg?size=626&ext=jpg&ga=GA1.1.12207566.1692912950&semt=ais" alt="">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <h1 class="text-center text-footer justify-content-center" style="color: #E68513;">GUINDIKO</h1>
+      </div>
+    </div>
+  </div>
+</div>

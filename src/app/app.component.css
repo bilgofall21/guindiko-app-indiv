@@ -1,0 +1,8 @@
+.banner {
+  width: 100%;
+  height: 60vh;
+  /* margin-bottom: 50px; */
+  background-image: url(https://htmldemo.net/hurst-v1/hurst/img/bg/1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="detailcontenu.component.css" />
+
+    <title>AdminHub</title>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <div class="brand mt-1" id="brand">
+        <span class="text text-white"
+          ><img src="assets/dashboard/logofooter.png" alt=""
+        /></span>
+        <div class="ms-3">
+          <p class="mt-3" style="font-size: 16px">Gorgui Amadem FALL</p>
+          <p style="font-size: 14px">en ligne</p>
+        </div>
+      </div>
+      <ul class="side-menu top">
+        <li class="active">
+          <a>
+            <i class="bx bxs-dashboard" [routerLink]="['/dashboard']"></i>
+            <span class="text" [routerLink]="['/dashboard']">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i
+              class="bx bxs-shopping-bag-alt"
+              [routerLink]="['/gestion-contenu']"
+            ></i>
+            <span class="text" [routerLink]="['/gestion-contenu']"
+              >Gestion contenu</span
+            >
+          </a>
+        </li>
+        <li>
+          <a>
+            <i
+              class="bx bxs-doughnut-chart"
+              [routerLink]="['/gestion-user']"
+            ></i>
+            <span class="text" [routerLink]="['/gestion-user']"
+              >Gestion utilisateurs</span
+            >
+          </a>
+        </li>
+        <li>
+          <a>
+            <i
+              class="bx bxs-message-dots"
+              [routerLink]="['/gestion-profil']"
+            ></i>
+            <span class="text" [routerLink]="['/gestion-profil']"
+              >Gestion profil</span
+            >
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu mt-4">
+        <li>
+          <a class="logout">
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Deconnexion</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- SIDEBAR -->
+
+    <!-- CONTENT -->
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <form action="#">
+          <div class="form-input mt-3">
+            <input type="search" placeholder="Search..." />
+            <button type="submit" class="search-btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <label for="switch-mode" class="switch-mode"></label>
+        <a href="#" class="notification">
+          <i class="bx bxs-bell" style="color: #00225a"></i>
+          <span class="num">8</span>
+        </a>
+        <a href="#" class="profile">
+          <img src="img/people.png" />
+        </a>
+      </nav>
+      <!-- NAVBAR -->
+
+      <!-- MAIN -->
+      <main>
+        <button
+          type="button"
+          class="btn btnAdd"
+          data-bs-toggle="modal"
+          data-bs-target="#ajoutModal"
+        >
+          Ajouter un sous-domaine
+        </button>
+        <div *ngFor="let domain of dataDomaine">
+          <h2 class="text-center text-black ">{{domain.nomDomaine}} </h2>
+          <p class="mt-4 container text-center"> {{domain.description}} </p>
+        </div>
+        <div class="content-wrapper">
+          <div class="">
+            <div class="row mt-5 d-flex justify-content-center cardContenu">
+              <div
+                class="col-sm-12 col-md-6 col-lg-4 mt-5"
+                *ngFor="let sousdomaine of listeSousDomaines"
+              >
+                <div class="card imgCard" style="width: 18rem">
+                  <img
+                    src="https://img.freepik.com/photos-gratuite/concept-controle-qualite-standard-m_23-2150041859.jpg?size=626&ext=jpg&ga=GA1.1.12207566.1692912950&semt=sph"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">{{ sousdomaine.nomSousDomaine }}</h5>
+                    <p class="card-text">{{ sousdomaine.description }}</p>
+                    <a class="" >
+                      <i
+                        class="fa-solid fa-eye me-4" 
+                        style="color: #e68513"
+                      ></i>
+                      </a>
+                      <a class="" (click)=" chargersousDomaine(sousdomaine)">
+                        <i
+                          class="fa-solid fa-pen me-4"
+                          style="color: #e68513"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modifierModal"
+                        ></i>
+                      </a>
+                      <a class="" (click)="deleteSousDomaine(sousdomaine.id) ">
+                      <i
+                        class="fa-solid fa-trash-can me-4"
+                        style="color: #e68513"
+                      ></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
+<!-- Popup pour ajouter un domaine -->
+<div
+  class="modal fade"
+  id="ajoutModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Ajouter un sous domaine
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+            >Image</label
+            >
+            <input
+                type="text"
+                class="form-control"
+                name="image"
+                id="exampleFormControlInput1"
+                placeholder=""
+                [(ngModel)]="image"
+                />
+            </div>
+            <!-- <div class="mb-3">
+              <Label class = "form-label"> Sélectionnez la photo 
+              <input id = "uploader" name = "image" type = "file" classe multiple = "file-chargement" (change)="getFile($event)" >
+             </Label>
+             </div> -->
+            
+            <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Titre</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="nomSousDomaine"
+              id="exampleFormControlInput1"
+              placeholder=""
+              [(ngModel)]="nomSousDomaine"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Contenu</label
+            >
+            <textarea
+              class="form-control"
+              name="description"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              [(ngModel)]="description"
+            ></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="mb-3">
+        <label for="domaine_id" class="form-label">Domaine</label>
+        <select
+          class="form-select"
+          aria-label="Sélectionner Domaine"
+          name="domaine_id"
+          [(ngModel)]="domaine_id"
+          required
+        >
+          <option value="">Sélectionner Domaine</option>
+          <option *ngFor="let domaine of domaineData" [value]="domaine.id">
+            {{ domaine.nomDomaine }}
+          </option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Annuler
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary" data-bs-dismiss="modal"
+          (click)=" ajouterSousDomaine()"
+        >
+          Ajouter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Popup pour modifier un domaine -->
+<div
+  class="modal fade"
+  id="modifierModal"
+  tabindex="-1"
+  aria-labelledby="modifierModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modifierModalLabel">
+          Modifier un service
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+            >Image</label
+            >
+            <input
+                type="text"
+                class="form-control"
+                name="image"
+                id="exampleFormControlInput1"
+                placeholder=""
+                [(ngModel)]="image"
+                />
+            </div>
+            <!-- <div class="mb-3">
+              <Label class = "form-label"> Sélectionnez la photo 
+              <input id = "uploader" name = "image" type = "file" classe multiple = "file-chargement" (change)="getFile($event)" >
+             </Label>
+             </div> -->
+            
+            <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Titre</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="nomSousDomaine"
+              id="exampleFormControlInput1"
+              placeholder=""
+              [(ngModel)]="nomSousDomaine"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Contenu</label
+            >
+            <textarea
+              class="form-control"
+              name="description"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              [(ngModel)]="description"
+            ></textarea>
+          </div>
+         
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Annuler
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="modifierSousDomaine()">Modifier</button>
+      </div>
+    </div>
+  </div>
+</div>

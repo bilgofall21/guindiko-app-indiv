@@ -1,0 +1,106 @@
+
+<app-header></app-header>
+
+<div class="pagecontainer">
+<div class="accueilcontainer">
+  <section class="entete">
+  <div class="banierehome img-fluid">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-start ">
+        </div>
+    </div>
+</div>
+<div class="textbaniere p-2" appBgColorBlueguindiko>
+  <h4 class="fw-bold">Kayy Guindikoo!!</h4>
+  <p class="lead text-white">Guindiko offre un espace d’échange et d’ encadrement pour tout personne en quêtes de renouveau et de challenge. De par son réseau de mentor  hautement qualifié le plateforme est la réponse a toutes vos questions et attentes </p>
+</div>
+</section>
+
+<section class="services px-5 ">
+  <div class="section title">
+    <h5 class="text-black fw-bold">Nos services</h5>
+    <hr class="border-2 opacity-100">
+  </div>
+  <div class="servicecontainer">
+    <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col " id="carteservice" *ngFor="let element of services">
+        <div class="card">
+          <img [src]=" element.imageUrl" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> {{element.titre}} </h5>
+            <p class="card-text"> {{element.description}} </p>
+          </div>
+          <div>
+            <button class="btn text-white fw-bold my-2 ms-3"appBgColorBlueguindiko> Voir plus</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+<section class="mentor px-5 ">
+  <div class="section title mt-5">
+    <h5 class="text-black fw-bold">Nos Mentors</h5>
+    <hr class="border-2 opacity-100">
+  </div>
+  <div class="mentorcontainer">
+    <div class="container">
+      <div class="row-gap-lg-0 row">
+        <div class="col-6 py-2" appBgColorBlueguindiko>
+          <h4 class="fw-bold">Mentor</h4>
+          <p class="lead text-white">Nos mentors trier sur le volet sont des professinnel certifiés dans leur domaine, en maine de vous assister. Désirer de partager leur experiences et vecus, Ces dernier seront etre la lanterne qui eclaire vos doutes</p>
+          <div class="text-end mb-2">
+            <button class="btn text-white fw-bold " appBgColorOrangeguindiko>Decouvrez nos mentors</button>
+          </div>
+        </div>
+        <div class="col-6 shadow-lg ">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRork2rZSPNjvP7WKRQfVT7P3B2TrDIWc91uA&usqp=CAU" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="articles px-5">
+  <div class="section title mt-5">
+    <h5 class="text-black fw-bold">Nos Articles</h5>
+    <hr class="border-2 opacity-100">
+  </div>
+  <div class="articlecontainer my-5">
+    <div class="row ">
+      <div class="col-6" *ngFor="let element of articles">
+        <div class="card p-3 w-100" id="cartearticle">
+          <div class="cardtop">
+            <div class="itm1 ">
+              <img class="img-fluid" [src]="element.imageArticle" alt="">
+            </div>
+            <div class="itm2 ms-3 mt-1">
+              <div class="card-title">
+                <h4>{{element.titreArticle}} </h4>
+              </div>
+              <h6>
+                <span style="color:#E68513 ;" class="fw-bold">domaine</span> : {{element.Domaine}}
+              </h6>
+              <p><i class="fa-solid fa-user me-2" style="color:#E68513 ;"></i> {{element.auteurArticle}}</p>
+              <p><i class="fa-solid fa-calendar-days me-2" style="color:#E68513 ;"></i> {{element.dateArticle}}</p>
+            </div>
+          </div>
+          <div class="card-text mt-1" id="textarticle">
+            <p>{{element.description}}</p>
+          </div>
+          <div class="text-end">
+            <button class="btn text-white " appBgColorBlueguindiko><i class="fa-regular fa-hand-point-right"></i> Voir detail</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+</div>
+
+<app-footer></app-footer>

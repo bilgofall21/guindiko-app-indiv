@@ -1,0 +1,117 @@
+<div class=" container  " id="form-first">
+  <div class="first-form   d-flex justify-content-between">
+  <div class=" col-lg-6" id="img-contain" >
+      <img  src="../../assets/img-connexion/femme-affaires-attrayant-bras-croises_13339-12510.avif" alt="">
+  </div>
+  <div class=" col-lg-6 border-2 " *ngIf="afficherBloc1" appBgColorBlueguindiko>
+        <div class="d-flex justify-content-around mt-3">
+          <div>
+            <p id="description" style="color: #E68513; font-size: 20px;"><strong>Connexion</strong></p>
+          </div>
+          <div class="d-flex justify-content-around  w-25" id="icon">
+            <div class="icone d-flex justify-content-center align-items-center">
+              <i class="bi bi-facebook" style="color: #E68513" ></i>
+            </div>
+            <div class="icone d-flex justify-content-center align-items-center">
+              <i class="fa-brands fa-twitter " style="color: #E68513" ></i>
+            </div>
+            <div class="icone d-flex justify-content-center align-items-center">
+              <div id="cercleicone"><a class="" href=""><i class="fab fa-instagram" style="color: #E68513"></i></a></div>
+            </div>
+          </div>
+
+      </div>
+
+      <form action="" (ngSubmit)="submitFunction($event)" class="mt-5" id="seconde-part-contain">
+          <div class="mb-3 col-10" >
+            <label for="exampleFormControlInput1" class="form-label text-white" >Nom d'utilisateur/Email</label>
+            <input type="email" class="form-control  " name="email" id="exampleFormControlInput1 " placeholder="nom utilisateur/email" [(ngModel)]="formData.email" >
+          </div>
+
+          <div class="mb-3 col-10" >
+            <label for="passwordExemple" class="form-label text-white ">Mot de passe</label>
+            <input type="password" class="form-control " name="password" id="passwordExemple" placeholder="mot de pass" [(ngModel)]="formData.password">
+          </div>
+
+            <button type="submit" class=" btn text-white fw-bold" id="btn-login"  appBgColorOrangeguindiko  >Se connecter</button>
+              <p class="para text-white mt-2">Mot de pass oubier</p>
+              <button class="btn text-white fw-lighter " appBgColorOrangeguindiko (click)="basculerBlocs(); " >Nouveau Utilisateur? S'enregistrer</button>
+
+        </form>
+
+      </div>
+
+  </div>
+
+</div>
+
+
+<div class="" id="form-seconde" *ngIf="!afficherBloc1">
+  <div class="d-flex justify-content-around pt ">
+    <p class="text-center" id="inscription my-5" style="color: #E68513; font-size: 20px;"><strong>Inscription</strong></p>
+    <div id="icon " style="color: #E68513;">
+      <i class="bi bi-facebook"></i>
+      <i class="fa-brands fa-twitter ms-3"></i>
+    </div>
+  </div>
+
+  <form action="">
+    <div class="row">
+      <div class="col-lg-6">
+        <label for="nameInput1" class="form-label text-white">Nom</label>
+        <input type="text" class="form-control w-75"  name="nom" id="nameInput1" placeholder="votre nom de famille"  [(ngModel)]="registreData.nom">
+      </div>
+      <div class="col-lg-6 border-2 ">
+          <label for="nameInput2" class="form-label text-white">Prenom</label>
+          <input type="tel" class="form-control w-75"name="prenom" id="nameInput2" placeholder="votre prenom" [(ngModel)]="registreData.prenom">
+        </div>
+        <div class="mb-3 col-lg-6">
+          <label for="exampleFormControlInput1" class="form-label text-white">Nom d'utilisateur/Email</label>
+          <input type="email" class="form-control w-75" name="email" id="exampleFormControlInput1" [(ngModel)]="registreData.email" >
+        </div>
+
+        <div class="mb-3 col-lg-6">
+          <label for="passwordExemple" class="form-label text-white">Date de naissance</label>
+          <input type="date" class="form-control w-75" name="DatedeNaissance" id="passwordExemple" [(ngModel)]="registreData.datedeNaissance">
+        </div>
+        <div class="mb-3 col-lg-6">
+          <label for="passwordExemple" class="form-label text-white">Telephone</label>
+          <input type="text" class="form-control w-75" name="telephone" id="passwordExemple" [(ngModel)]="registreData.telephone">
+        </div>
+
+        <div class="mb-3 " id="selectoption">
+          <label for="passwordExemple" class="form-label text-white">profil</label>
+          <select class="form-select" aria-label="Default select example" name="domaine" [(ngModel)]="registreData.role_id">
+            <option selected>Profil</option>
+            <!-- <option value="1">One</option> -->
+            <option value="1">admin</option>
+            <option value="2">mentore</option>
+            <option value="3">mentor</option>
+          </select>
+        </div>
+        <div class="mb-3 " id="selectoption">
+          <label for="passwordExemple" class="form-label text-white">Domaine</label >
+          <select class="form-select" aria-label="Default select example"  name="role" [(ngModel)]="registreData.domaine_id" >
+            <option selected value=""></option>
+            <option value="1">Informatique</option>
+            <option value="2">Science</option>
+          </select>
+        </div>
+
+        <div class="mb-3 col-lg-6">
+          <label for="passwordExemple" class="form-label text-white">mot de pass</label>
+          <input type="password" class="form-control w-75" name="password" id="passwordExemple"[(ngModel)]="registreData.password" >
+        </div>
+
+      <!-- <div class="mb-3 col-lg-6 bg-danger" id="passer">
+        <label for="passwordExemple" class="form-label text-white">Mot de passe</label>
+        <input type="password" class="form-control w-100" name="password" id="passwordExemple">
+      </div> -->
+
+    </div>
+      <div class="col-auto">
+        <button type="submit"  style=" background-color: #E68513; border-radius: 5px;" class="  text-white mb-3"  id="btn-login" (click)="registerUser()">Connecter</button>
+      </div>
+    </form>
+
+  </div>

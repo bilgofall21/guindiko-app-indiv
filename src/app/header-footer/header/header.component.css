@@ -1,0 +1,39 @@
+:root {
+  --bluemarine : #00225A;
+  --orangeguindiko : #E68513;
+}
+#cercleicone{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #E68513;
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+
+}
+#cercleicone a{
+color: white;
+
+}
+#logomenu1 img{
+height: 80px;
+}
+#logomenu2 img{
+height: 80px;
+}
+#navigation a{
+  color: #00225A;
+  font-weight: bold;
+  font-size: 18px;
+}
+.navbar{
+  backdrop-filter: blur(50px);
+
+}
+/* Media query menu header */
+@media (max-width:990px){
+  #logomenu1 img{
+    display: none;
+    }
+}

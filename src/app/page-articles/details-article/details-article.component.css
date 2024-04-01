@@ -1,0 +1,50 @@
+/* baniere css */
+.banierearticles{
+  background-image: url(https://www.fasonumerique.com/public/img/a35bfa62eef7369cf99f300c277387d01489ad27.jpg);
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+.banierearticles img{
+  height: 60vh;
+}
+.textbaniere{
+  width: 30%;
+  position: absolute;
+  bottom: 4px;
+  left: 80px;
+
+}
+.textbaniere h4, .mentorcontainer h4{
+color:#E68513;
+}
+.textbaniere p{
+font-size: 18px;
+}
+
+/* detail de l'article */
+#detailcontainer{
+  margin: 0 auto;
+  /* background-color: #E68513; */
+}
+#detail {
+margin: 0 auto;
+
+}
+#detail img{
+  height: 400px;
+
+}
+
+/* commentaire */
+#commentairecontainer{
+  height: 300px;
+}
+#commentairecontainer img{
+height: 200px;
+}
+#commentairecontainer h5{
+color: #E68513;
+font-weight: bold;
+}
